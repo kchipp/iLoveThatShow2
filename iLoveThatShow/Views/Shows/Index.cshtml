@@ -1,0 +1,80 @@
+﻿@model IEnumerable<iLoveThatShow.Models.Shows>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h1>Find Your Channel or Make a New One</h1>
+<style>
+    body {
+        background-image: url(/Content/dark2.jpg);
+    }
+    input{
+        color:#A4036F
+    }
+</style>
+<p>
+    @Html.ActionLink("Make a new \"Channel\"", "Create")
+    @using (Html.BeginForm())
+    {
+    <p>
+        You can seach for a "channel" here:
+        @Html.TextBox("SearchString")
+        <input type="submit" value="Search&raquo" />
+        <br />
+        <br />
+    </p>
+    }
+
+    </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Network)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AirDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AirTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Network)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AirDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AirTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ShowId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ShowId }) 
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.ShowId })*@
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+<div id="search">
+    <h2>Search for information about your favorite shows.</h2>
+    <p>Information provided by the Movie Database</p>
+</div>
+<style>
+    body {
+        background-image: url(/Content/dark3.jpg);
+    }
+
+</style>
+<br /><br />
+
+<script src="~/Scripts/search.js"></script>
+@using (Html.BeginForm())
+{
+    <p>
+
+        Enter Search word(s) : <input id="show" placeholder="Enter text here..." />
+        <button id="submit"><a href="https://www.themoviedb.org/tv/1402-the-walking-dead">Submit &raquo;</a></button>
+
+    </p>
+    <br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    //<p>You can also click here to be redirected to the Movie Database directly.<a class="btn btn-default" href="https://www.themoviedb.org/tv">To TMDb &raquo;</a></p>
+   
+}
